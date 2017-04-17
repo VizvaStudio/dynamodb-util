@@ -21,7 +21,7 @@ dynamodb-util --config .\config.json --command  listtables
 
 ## Config file format
 
-###Type1
+### Type1
 Backup from DynamoDB to JSON file
 
 ```
@@ -42,7 +42,7 @@ Backup from DynamoDB to JSON file
 }
 ```
 
-###Type2
+### Type2
 Backup from DynamoDB to DynamoDB
 
 ```

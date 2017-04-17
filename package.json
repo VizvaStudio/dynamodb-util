@@ -1,0 +1,31 @@
+{
+  "name": "dynamodb-util",
+  "version": "1.0.9",
+  "description": "AWS DynamoDB utility in NodeJS to simplify working with the dynamodb data.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node bin/dynamodb-util.js"
+  },
+  "bin":{
+    "dynamodb-util": "bin/dynamodb-util.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/VizvaStudio/dynamodb-util.git"
+  },
+  "keywords": [
+    "aws",
+    "dynamodb",
+    "backup",
+    "commandline"
+  ],
+  "author": "Athufa Thaseen <athaseen@vizvastudio.com> (https://vizvastudio.com)",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.3.0",
+    "aws-sdk": "^2.39.0",
+    "fs": "0.0.1-security",
+    "jsonfile": "^2.4.0",
+    "yargs": "^7.0.2"
+  }
+}

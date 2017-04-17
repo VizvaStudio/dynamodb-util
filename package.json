@@ -16,7 +16,8 @@
   "keywords": [
     "aws",
     "dynamodb",
-    "backup"
+    "backup",
+    "commandline"
   ],
   "author": "Athufa Thaseen <athaseen@vizvastudio.com> (https://vizvastudio.com)",
   "license": "ISC",

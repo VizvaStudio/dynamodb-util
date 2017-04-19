@@ -68,3 +68,11 @@ Backup from DynamoDB to DynamoDB
     }
 }
 ```
+
+Target group supports 2 modes 
+* create
+* append
+
+Use **create** mode if you want to create a the backup table with the excaly replica of source with keys, GSI (Global Seconday Index) and LSI (Local Secondary Index).
+
+And use **append** mode if you already have a table and just want to copy the data from source to target table.  

@@ -12,15 +12,13 @@ var args = {
 }
 
 try {
-    log.i(argv);
     if (argv.config && argv.config.endsWith('.json')) {
         var config = require(argv.config.replace('\\', '/'));
-        log.i(config);
+        log.i("Config : ", config);
         if (argv.command && args.command.indexOf(argv.command) >= 0) {
             if (config.source.aws)
                 AWS.config.update(config.source.aws);
             var command = argv.command;
-            log.i(command);
             switch (argv.command) {
                 case 'listtables':
                     dynamoDBHelper.listTables(AWS, (err, data) => {
@@ -43,12 +41,16 @@ try {
                             switch (config.target.type) {
                                 case 'json':
                                     backupHelper.backupDynamoDBToJSON(config.source, config.target, (err, result) => {
-                                        log.i(err, result);
+                                        if (err)
+                                            log.e(err);
+                                        log.i(result);
                                     })
                                     break;
                                 case 'dynamoDB':
                                     backupHelper.backupDynamoDBToDynamoDB(config.source, config.target, (err, result) => {
-                                        log.i(err, result);
+                                        if (err)
+                                            log.e(err);
+                                        log.i(result);
                                     })
                                     break;
                                 default:

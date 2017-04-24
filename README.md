@@ -58,7 +58,7 @@ Backup from DynamoDB to DynamoDB
     },
     "target": {
         "type": "dynamoDB",
-        "mode": "append",
+        "mode": "create",
         "tableName": "<<TableName>>",
         "aws": {
             "accessKeyId": "<<accessKeyId>>",

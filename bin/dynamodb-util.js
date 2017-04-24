@@ -14,7 +14,7 @@ var args = {
 try {
     if (argv.config && argv.config.endsWith('.json')) {
         var config = require(argv.config.replace('\\', '/'));
-        log.i("Config : ", config);
+        log.i('Config : ', JSON.stringify(config));
         if (argv.command && args.command.indexOf(argv.command) >= 0) {
             if (config.source.aws)
                 AWS.config.update(config.source.aws);
@@ -42,15 +42,17 @@ try {
                                 case 'json':
                                     backupHelper.backupDynamoDBToJSON(config.source, config.target, (err, result) => {
                                         if (err)
-                                            log.e(err);
-                                        log.i(result);
+                                            log.e(err.message);
+                                        else
+                                            log.i(result);
                                     })
                                     break;
                                 case 'dynamoDB':
                                     backupHelper.backupDynamoDBToDynamoDB(config.source, config.target, (err, result) => {
                                         if (err)
-                                            log.e(err);
-                                        log.i(result);
+                                            log.e(err.message);
+                                        else
+                                            log.i(result);
                                     })
                                     break;
                                 default:

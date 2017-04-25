@@ -1,5 +1,35 @@
 # dynamodb-util
 AWS DynamoDB utility in NodeJS to simplify working with the dynamodb data.
+
+# Replication
+A helper class is provided with this utilty, using this you can easily setup dynamoDB replication using AWS lambda function. 
+
+## Setup
+* **Streams:** Enable DynamoDB streams with **new** and **old** image. 
+* **Create Node Project:** Create a node project with the below code snippet or download the example project form the github (Make sure you have **dynamodb-util** package installed locally and available in the **node_modules**). 
+* **Update target details:** Update the code with the target table name and aws credentails. 
+* **Packaging:** Compress (.zip) the entire project including the **node_modules**. 
+* **Create and deploy Lambda Function** Create a AWS lambda function with the above created package. 
+* **Setup Trigggers** Add triggers to invoke from DynamoDB Stream
+
+```javascript
+const ddbutil = require("dynamodb-util").replication;
+
+module.exports.handler = (event, context, callback) => {
+    var config = {
+        "tableName": "<<TableName>>",
+        "aws": {
+            "accessKeyId": "<<accessKeyId>>",
+            "secretAccessKey": "<<secretAccessKey>>",
+            "region": "<<region>>"
+        }
+    }
+    ddbutil.sync(config, event, callback);
+}
+```
+# Util
+A command line utility to backup dynamoDB to another dynamoDB table or to a JSON file. 
+
 ## Installation
 Typically you would use this as command line utility.
 ```
@@ -19,7 +49,7 @@ dynamodb-util --config .\config.json --command  listtables
 ### Type1
 Backup from DynamoDB to JSON file
 
-```
+```json
 {
     "source": {
         "type": "dynamoDB",
@@ -40,7 +70,7 @@ Backup from DynamoDB to JSON file
 ### Type2
 Backup from DynamoDB to DynamoDB
 
-```
+```json
 {
     "source": {
         "type": "dynamoDB",

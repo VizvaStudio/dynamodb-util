@@ -1,6 +1,6 @@
 {
   "name": "dynamodb-util",
-  "version": "1.0.13",
+  "version": "1.0.22",
   "description": "AWS DynamoDB utility in NodeJS to simplify working with the dynamodb data.",
   "main": "app.js",
   "scripts": {

@@ -1,3 +1,4 @@
 module.exports = {
-    "dynamodb-helper": require('./lib/dynamodb-helper.js')
+    "helper": require('./lib/dynamodb-helper.js'),
+    "replication": require('./bin/dynamodb-rep.js')
 }

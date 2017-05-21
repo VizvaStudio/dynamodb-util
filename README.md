@@ -40,12 +40,14 @@ npm install -g dynamodb-util
 dynamodb-util --config .\config.json --command  listtables
 ```
 **Note:** Use absolute path while specifying the config.json
+
 ## List of supported commands
 * listtables
 * listrecords
 * describe
 * backup
 ## Config file format
+
 ### Type1
 Backup from DynamoDB to JSON file
 

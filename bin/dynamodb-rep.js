@@ -1,7 +1,7 @@
 const AWS = require('aws-sdk');
 const log = require('../lib/log-helper')
 const dynamoDBHelper = require('../lib/dynamodb-helper');
-const commonHelper = require('../lib/commonHelper');
+const commonHelper = require('../lib/common-helper');
 
 const constants = {
     INSERT: 'INSERT',

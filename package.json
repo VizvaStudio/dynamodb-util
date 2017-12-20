@@ -1,12 +1,12 @@
 {
   "name": "dynamodb-util",
-  "version": "1.0.24",
+  "version": "1.0.25",
   "description": "AWS DynamoDB utility in NodeJS to simplify working with the dynamodb data.",
   "main": "app.js",
   "scripts": {
     "start": "node bin/dynamodb-util.js"
   },
-  "bin":{
+  "bin": {
     "dynamodb-util": "bin/dynamodb-util.js"
   },
   "repository": {
@@ -26,6 +26,7 @@
     "aws-sdk": "^2.39.0",
     "fs": "0.0.1-security",
     "jsonfile": "^2.4.0",
+    "s3-upload-stream": "^1.0.7",
     "yargs": "^7.0.2"
   }
 }

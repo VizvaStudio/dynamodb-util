@@ -55,6 +55,14 @@ try {
                                             log.i(result);
                                     })
                                     break;
+                                case 's3':
+                                    backupHelper.backupDynamoDBToS3(config.source, config.target, (err, result) => {
+                                        if (err)
+                                            log.e(err.message);
+                                        else
+                                            log.i(result);
+                                    })
+                                    break;
                                 default:
                                     break;
                             }

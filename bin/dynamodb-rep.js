@@ -1,6 +1,7 @@
 const AWS = require('aws-sdk');
-const log = require('../lib/log-helper.js')
-const dynamoDBHelper = require('../lib/dynamodb-helper.js');
+const log = require('../lib/log-helper')
+const dynamoDBHelper = require('../lib/dynamodb-helper');
+const commonHelper = require('./lib/commonHelper');
 
 const constants = {
     INSERT: 'INSERT',
@@ -16,7 +17,7 @@ sync = (config, streamEvent, callback) => {
         return callback('Target table not passed');
     if (!streamEvent)
         return callback('event is undefined');
-    var dynamoDb = dynamoDBHelper.getDynamoDBClient(config.aws);
+    var dynamoDb = commonHelper.getDynamoDBClient(config.aws);
     var reqParam = [];
     reqParam[config.tableName] = [];
     streamEvent.Records.forEach((record) => {
